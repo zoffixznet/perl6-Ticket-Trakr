@@ -1,4 +1,5 @@
 {
-    RT_USER => 'your rt user',
-    RT_PASS => 'your rt pass',
+    "rt-user": "your user",
+    "rt-pass": "your pass",
+    "db-file": "rt.db"
 }
