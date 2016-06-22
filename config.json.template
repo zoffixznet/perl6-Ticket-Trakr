@@ -1,0 +1,4 @@
+{
+    RT_USER => 'your rt user',
+    RT_PASS => 'your rt pass',
+}
