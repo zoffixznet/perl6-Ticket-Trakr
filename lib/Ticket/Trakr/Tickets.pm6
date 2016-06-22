@@ -1,15 +1,20 @@
 unit class Ticket::Trakr::Tickets;
-
+use Pretty::Topic '♥';
 use DBIish;
-use Config::From;
 use RT::Client::REST:from<Perl5>;
 
-has Str $.db-file;
-has Str $.rt-user;
-has Str $.rt-pass;
+constant $server = 'https://rt.perl.org/';
 
-has DBDish::Driver $!dbh = do {
-    my $dbh = DBIish.connect: "SQLite", :database($!db-file);
+has Str:D $.db-file is required;
+has Str:D $.rt-user is required;
+has Str:D $.rt-pass is required;
+
+has RT::Client::REST $!rt = do with RT::Client::REST.new: :$server {
+    .login: :username($.rt-user) :password($.rt-pass); ♥
+};
+
+has DBDish::Connection $!dbh = do {
+    my $dbh = DBIish.connect: 'SQLite', :database($!db-file);
     unless $!db-file.IO.s {
         $dbh.do: q:to/END_SQL/;
             CREATE TABLE tickets (
@@ -29,5 +34,7 @@ method all {
     }
 }
 
-method update {
+method fetch {
+    my %tickets = self.all.map: { ♥.<id> => ♥ };
+
 }
