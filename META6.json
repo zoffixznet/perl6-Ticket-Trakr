@@ -1,0 +1,16 @@
+{
+    "perl"         : "6.c",
+    "name"         : "Ticket::Trakr",
+    "version"      : "1.001001",
+    "description"  : "RT Ticket Manager",
+    "depends"      : [
+        "Config::From",
+        "Pretty::Topic"
+    ],
+    "test-depends" : [ ],
+    "provides"     : {
+        "" : ""
+    },
+    "authors"      : [ "Zoffix Znet" ],
+    "support"      : {"source"   : "git://github.com/zoffixznet/perl6-Ticket-Trakr.git"}
+}
