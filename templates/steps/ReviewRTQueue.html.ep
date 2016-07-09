@@ -21,8 +21,8 @@
       <tr>
         <td><a href="<%= $t->url %>" target="_blank">#<%= $t->id %></a></td>
         <td><small><%= $t->tags %></small> <%= $t->subject %></td>
-        <td class="actions">
-          <a href="/toggle-mark/try-to-fix-<%= $t->id %>"
+        <td class="actions"
+          ><a href="/toggle-mark/try-to-fix-<%= $t->id %>"
               class="btn btn-xs btn-<%= bt $is_try_to_fix, 'success' %>"
               data-type='success'
             ><i class="glyphicon glyphicon-ok-circle"></i> Try to fix</a>
@@ -53,8 +53,8 @@
           <a href="/toggle-mark/too-hard-<%= $t->id %>"
               class="btn btn-xs btn-<%= bt $is_too_hard, 'danger' %>"
               data-type='danger'
-            ><i class=" glyphicon glyphicon-exclamation-sign"></i> Too hard</a>
-        </td>
+            ><i class=" glyphicon glyphicon-exclamation-sign"></i> Too hard</a
+        ></td>
       </tr>
     % }
   </tbody>

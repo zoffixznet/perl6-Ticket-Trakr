@@ -2,6 +2,10 @@
 
 RT ticket status helper tool
 
+## Screenshot
+
+![](screenshot.png)
+
 ## RT Login/Pass
 
 Run this in the repo checkout:
@@ -11,9 +15,9 @@ Run this in the repo checkout:
 Then open the `secret.txt` file and enter your own RT user/login. If your
 regular credentials don't work, go to
 [https://rt.perl.org/User/Prefs.html](https://rt.perl.org/User/Prefs.html)
-and set up the password in `CLI Password` section. 
+and set up the password in `CLI Password` section.
 
-## OS Support
+## Installation
 
 This software is developed to work on Debian Linux (and it's derivatives,
 Ubuntu, Bodhi Linux, etc.). It may work on other OSes, but no official
