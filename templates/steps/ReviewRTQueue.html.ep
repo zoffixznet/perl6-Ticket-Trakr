@@ -10,6 +10,7 @@
   <tbody>
     % for my $t ( @$tickets ) {
       % my $is_core_decision  = is_marked('core-decision-'  . $t->id);
+      % my $is_easy           = is_marked('easy-'           . $t->id);
       % my $is_spec_decision  = is_marked('spec-decision-'  . $t->id);
       % my $is_too_hard       = is_marked('too-hard-'       . $t->id);
       % my $is_try_to_fix     = is_marked('try-to-fix-'     . $t->id);
@@ -27,6 +28,10 @@
               class="btn btn-xs btn-<%= bt $is_try_to_fix, 'success' %>"
               data-type='success'
             ><i class="glyphicon glyphicon-ok-circle"></i> Try to fix</a>
+          <a href="/toggle-mark/easy-<%= $t->id %>"
+              class="btn btn-xs btn-<%= bt $is_easy, 'danger' %>"
+              data-type='danger'
+            ><i class="glyphicon glyphicon-star"></i> Easy</a>
           <a href="/toggle-mark/tests-needed-<%= $t->id %>"
               class="btn btn-xs btn-<%= bt $is_tests_needed, 'info' %>"
               data-type='info'
