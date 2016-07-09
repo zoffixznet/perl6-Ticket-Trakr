@@ -2,13 +2,17 @@
   <table class="table table-condensed">
   <thead>
     <tr>
+      <th>Q</th>
       <th>ID</th>
       <th>Subject</th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
+    % my $total = @$tickets;
+    % my $n = 0;
     % for my $t ( @$tickets ) {
+      % $n++;
       % my $is_core_decision  = is_marked('core-decision-'  . $t->id);
       % my $is_easy           = is_marked('easy-'           . $t->id);
       % my $is_spec_decision  = is_marked('spec-decision-'  . $t->id);
@@ -21,6 +25,11 @@
       % = is_marked('test-if-still-broken-' . $t->id);
       
       <tr>
+        <td>
+          <small>
+          <%= $n %>/<%= $total %> (<%= sprintf '%d%%', $n/$total*100 %>)
+          </small>
+        </td>
         <td><a href="<%= $t->url %>" target="_blank">#<%= $t->id %></a></td>
         <td><small><%= $t->tags %></small> <%= $t->subject %></td>
         <td class="actions"
