@@ -56,7 +56,7 @@
               data-type='danger'
             ><i class="glyphicon glyphicon-exclamation-sign"></i> Too hard</a>
           <a href="/toggle-mark/not-interested-<%= $t->id %>"
-              class="btn btn-xs btn-<%= bt $is_too_hard, 'info' %>"
+              class="btn btn-xs btn-<%= bt $is_not_interested, 'info' %>"
               data-type='info'
             ><i class="glyphicon glyphicon-remove-sign"></i>
               Not interested</a

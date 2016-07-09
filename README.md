@@ -19,6 +19,13 @@ regular credentials don't work, go to
 [https://rt.perl.org/User/Prefs.html](https://rt.perl.org/User/Prefs.html)
 and set up the password in `CLI Password` section.
 
+## Usage
+
+Run `./start-app.p6` then visit `http://localhost:3000` to access the app's
+interface and click `Load RT Tickets`. Note: it may take a bit for the
+app to compile on the first run. And the tickets page takes quite a while
+to load (RT is slow).
+
 ## Installation
 
 This software is developed to work on Debian Linux (and it's derivatives,
