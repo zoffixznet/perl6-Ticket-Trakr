@@ -4,6 +4,8 @@ RT ticket status helper tool
 
 ## Screenshot
 
+[see enlarged](https://raw.githubusercontent.com/zoffixznet/perl6-Ticket-Trakr/master/screenshot.png)
+
 ![](screenshot.png)
 
 ## RT Login/Pass
