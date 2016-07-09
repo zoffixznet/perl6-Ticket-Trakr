@@ -1,3 +1,48 @@
-body {
+a {
+    outline: 0!important;
+}
 
+.panel-title {
+    padding-top: 3px;
+
+    .btn {
+        color: #fff!important;
+        position: relative;
+        top: -8px;
+        margin-bottom: -13px;
+        margin-right: 10px;
+    }
+}
+
+.panel-body {
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+#steps .text-left {
+    text-align: left!important;
+}
+
+.step-RT-Review-RT-Queue {
+    .table  {
+        td {
+            vertical-align: middle;
+        }
+
+        .actions {
+            white-space: nowrap;
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 2000px;
+}
+
+pre.console {
+    background: #000;
+    color: #AAA;
+    font-family: monospace;
 }

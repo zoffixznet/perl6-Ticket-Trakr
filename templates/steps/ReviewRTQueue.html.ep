@@ -1,0 +1,62 @@
+<div class="table-responsive" id="tickets">
+  <table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Subject</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    % for my $t ( @$tickets ) {
+      % my $is_core_decision = is_marked('core-decision-' . $t->id);
+      % my $is_spec_decision = is_marked('spec-decision-' . $t->id);
+      % my $is_too_hard      = is_marked('too-hard-'      . $t->id);
+      % my $is_try_to_fix    = is_marked('try-to-fix-'    . $t->id);
+      % my $is_check_later   = is_marked('check-later-'   . $t->id);
+      % my $is_tests_needed  = is_marked('tests-needed-'  . $t->id);
+      % my $is_test_if_still_broken
+      % = is_marked('test-if-still-broken-' . $t->id);
+      
+      <tr>
+        <td><a href="<%= $t->url %>" target="_blank">#<%= $t->id %></a></td>
+        <td><small><%= $t->tags %></small> <%= $t->subject %></td>
+        <td class="actions">
+          <a href="/toggle-mark/try-to-fix-<%= $t->id %>"
+              class="btn btn-xs btn-<%= bt $is_try_to_fix, 'success' %>"
+              data-type='success'
+            ><i class="glyphicon glyphicon-ok-circle"></i> Try to fix</a>
+          <a href="/toggle-mark/tests-needed-<%= $t->id %>"
+              class="btn btn-xs btn-<%= bt $is_tests_needed, 'info' %>"
+              data-type='info'
+            ><i class="glyphicon glyphicon-fire"></i> Tests needed</a>
+          <a href="/toggle-mark/core-decision-<%= $t->id %>"
+              class="btn btn-xs btn-<%= bt $is_core_decision, 'success' %>"
+              data-type='success'
+            ><i class="glyphicon glyphicon-question-sign"></i>
+              Needs core member decision</a>
+          <a href="/toggle-mark/spec-decision-<%= $t->id %>"
+              class="btn btn-xs btn-<%= bt $is_spec_decision, 'success' %>"
+              data-type='success'
+            ><i class="glyphicon glyphicon-info-sign"></i>
+              Needs spec decision</a>
+          <a href="/toggle-mark/check-later-<%= $t->id %>"
+              class="btn btn-xs btn-<%= bt $is_check_later, 'warning' %>"
+              data-type='warning'
+            ><i class="glyphicon glyphicon-time"></i> Check ticket later</a>
+          <a href="/toggle-mark/test-if-still-broken-<%= $t->id %>"
+              class="btn btn-xs
+                btn-<%= bt $is_test_if_still_broken, 'warning' %>"
+                data-type='warning'
+            ><i class="glyphicon glyphicon-search"></i>
+              Needs checking if it's still broken</a>
+          <a href="/toggle-mark/too-hard-<%= $t->id %>"
+              class="btn btn-xs btn-<%= bt $is_too_hard, 'danger' %>"
+              data-type='danger'
+            ><i class=" glyphicon glyphicon-exclamation-sign"></i> Too hard</a>
+        </td>
+      </tr>
+    % }
+  </tbody>
+  </table>
+</div>

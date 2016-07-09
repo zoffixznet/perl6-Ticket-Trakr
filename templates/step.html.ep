@@ -1,0 +1,19 @@
+% layout 'default';
+
+<div class="col-sm-12">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h2 class="panel-title">
+        <%= $step->menu %>
+      </h2>
+    </div>
+    <div class="panel-body step-<%= $step->url %>">
+      % my $panel = { $step->content };
+      % if ( exists $panel->{content} ) {
+        <%== $panel->{content} %>
+      % } else {
+        %= include 'steps/' . $panel->{template}, %{ $panel->{args} || {} };
+      % }
+    </div>
+  </div>
+</div>

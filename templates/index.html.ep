@@ -1,3 +1,4 @@
 % layout 'default';
 
-<a href="/update" class="btn btn-primary">Update</a>
+<a href="/step/RT-Review-RT-Queue/view"
+  class="btn btn-lg btn-block btn-success">Load RT Tickets</a>

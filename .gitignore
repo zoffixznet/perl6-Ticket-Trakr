@@ -1,4 +1,5 @@
+release.db
+assets/assetpack.db
 assets/cache
-assets/asetpack.db
-config.json
-**.precomp
+secret.txt
+**/.precomp
