@@ -9,12 +9,13 @@
   </thead>
   <tbody>
     % for my $t ( @$tickets ) {
-      % my $is_core_decision = is_marked('core-decision-' . $t->id);
-      % my $is_spec_decision = is_marked('spec-decision-' . $t->id);
-      % my $is_too_hard      = is_marked('too-hard-'      . $t->id);
-      % my $is_try_to_fix    = is_marked('try-to-fix-'    . $t->id);
-      % my $is_check_later   = is_marked('check-later-'   . $t->id);
-      % my $is_tests_needed  = is_marked('tests-needed-'  . $t->id);
+      % my $is_core_decision  = is_marked('core-decision-'  . $t->id);
+      % my $is_spec_decision  = is_marked('spec-decision-'  . $t->id);
+      % my $is_too_hard       = is_marked('too-hard-'       . $t->id);
+      % my $is_try_to_fix     = is_marked('try-to-fix-'     . $t->id);
+      % my $is_check_later    = is_marked('check-later-'    . $t->id);
+      % my $is_tests_needed   = is_marked('tests-needed-'   . $t->id);
+      % my $is_not_interested = is_marked('not-interested-' . $t->id);
       % my $is_test_if_still_broken
       % = is_marked('test-if-still-broken-' . $t->id);
       
@@ -53,7 +54,12 @@
           <a href="/toggle-mark/too-hard-<%= $t->id %>"
               class="btn btn-xs btn-<%= bt $is_too_hard, 'danger' %>"
               data-type='danger'
-            ><i class=" glyphicon glyphicon-exclamation-sign"></i> Too hard</a
+            ><i class="glyphicon glyphicon-exclamation-sign"></i> Too hard</a>
+          <a href="/toggle-mark/not-interested-<%= $t->id %>"
+              class="btn btn-xs btn-<%= bt $is_too_hard, 'info' %>"
+              data-type='info'
+            ><i class="glyphicon glyphicon-remove-sign"></i>
+              Not interested</a
         ></td>
       </tr>
     % }
