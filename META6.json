@@ -12,7 +12,12 @@
         "IO::Socket::SSL"
     ],
     "test-depends" : [ ],
-    "provides"     : {},
+    "provides"     : {
+        "Rele6sr"       : "lib/Rele6sr.pm6",
+        "Rele6sr::DB"   : "lib/Rele6sr/DB.pm6",
+        "Rele6sr::RT"   : "lib/Rele6sr/RT.pm6",
+        "Rele6sr::Step" : "lib/Rele6sr/Step.pm6"
+    },
     "authors"      : [ "Zoffix Znet" ],
-    "support"      : {"source"   : "git://github.com/zoffixznet/Rele6sr.git"}
+    "support"      : {"source"   : "git://github.com/zoffixznet/perl6-Ticket-Trakr.git"}
 }
