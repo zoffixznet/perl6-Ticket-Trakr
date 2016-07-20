@@ -28,6 +28,10 @@ a {
     .table  {
         td {
             vertical-align: middle;
+            
+            small {
+                white-space: nowrap;
+            }
         }
 
         .actions {
@@ -38,7 +42,7 @@ a {
 
 .container {
     width: 100%;
-    max-width: 2200px;
+    max-width: 2450px;
 }
 
 pre.console {

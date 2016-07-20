@@ -13,6 +13,7 @@
     % my $n = 0;
     % for my $t ( @$tickets ) {
       % $n++;
+      % my $is_done           = is_marked('done-'           . $t->id);
       % my $is_core_decision  = is_marked('core-decision-'  . $t->id);
       % my $is_easy           = is_marked('easy-'           . $t->id);
       % my $is_spec_decision  = is_marked('spec-decision-'  . $t->id);
@@ -33,7 +34,11 @@
         <td><a href="<%= $t->url %>" target="_blank">#<%= $t->id %></a></td>
         <td><small><%= $t->tags %></small> <%= $t->subject %></td>
         <td class="actions"
-          ><a href="/toggle-mark/try-to-fix-<%= $t->id %>"
+          ><a href="/toggle-mark/done-<%= $t->id %>"
+              class="btn btn-xs btn-<%= bt $is_done, 'info' %>"
+              data-type='info'
+            ><i class="glyphicon glyphicon-ok"></i> </a>
+          <a href="/toggle-mark/try-to-fix-<%= $t->id %>"
               class="btn btn-xs btn-<%= bt $is_try_to_fix, 'success' %>"
               data-type='success'
             ><i class="glyphicon glyphicon-ok-circle"></i> Try to fix</a>
